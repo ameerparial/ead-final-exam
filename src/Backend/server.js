@@ -37,8 +37,21 @@ app.get('/receipedelete/:id', async (req, res)=>{
     res.redirect('http://localhost:3000/showreceipes');
 
 })
-app.get('/receipeupdate/:id', (req, res)=>{
-    res.json(req.params.id);
+app.get('/receipeupdate/:id', async (req, res)=>{
+    console.log(req.params.body);
+    const id = req.params.id;
+    const receipe = await ReceipeSchema.findById(req.params.id);
+    console.log(receipe);
+    // res.send('Data is being updated with id : '+id);
+    res.json(receipe);
+})
+
+app.post('/updateme/:id', async (req, res)=>{
+    const id = req.params.id;
+    const newProduct = await ReceipeSchema.updateOne({_id:id}, {$set:{title:req.body.title, des:req.body.des, ing:req.body.ing, ins:req.body.ins}});
+    console.log('Receipe Updated');
+    // console.log(newProduct);
+    res.redirect('http://localhost:3000/showreceipes');    
 })
 
 const server = app.listen(2700,()=>{

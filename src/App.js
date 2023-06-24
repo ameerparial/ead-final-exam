@@ -19,9 +19,9 @@ function App() {
           <Route path='receipedetails'>
             <Route path=':id' element={<ReceipeDetails/>}/>
           </Route>
-          {/* <Route path='receipedelete'>
-            <Route path=':id' element={}/>
-          </Route> */}
+          <Route path='receipeupdate'>
+            <Route path=':id' element={<AddReceipe/>}/>
+          </Route>
 
         </Routes>
       

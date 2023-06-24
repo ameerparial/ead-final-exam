@@ -20,7 +20,7 @@ function ReceipeDetails() {
         <h3>description:{receipe?.des}</h3>
         <h3>Ingredients:{receipe?.ing}</h3>
         <h3>Instructions:{receipe?.ins}</h3>
-        <label><Link to={`http://localhost:2700/receipeupdate/${receipe._id}`}>Update</Link></label>
+        <label><Link to={`/receipeupdate/${receipe._id}`}>Update</Link></label>
         <label><Link to={`http://localhost:2700/receipedelete/${receipe._id}`}>Delete</Link></label>
     </>
     
