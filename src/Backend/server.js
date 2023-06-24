@@ -3,9 +3,13 @@ const express = require('express');
 
 const app = express();
 
+const cors = require('cors');
+
+
 const receipes =[];
 
 app.use(express.urlencoded({extended:true}));
+app.use(cors());
 
 app.post('/AddReceipe', (req, res)=>{
 
