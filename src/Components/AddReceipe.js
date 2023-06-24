@@ -10,7 +10,7 @@ function AddReceipe() {
             <br></br>
 
             <label>
-                Description: <input type='text' name='desc' placeholder='Add description'/>
+                Description: <input type='text' name='des' placeholder='Add description'/>
             </label>
             <br></br>
 

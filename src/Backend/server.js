@@ -17,8 +17,13 @@ app.post('/AddReceipe', (req, res)=>{
     res.redirect('http://localhost:3000/showreceipes');
 });
 
-app.post('/showreceipes', (req, res)=>{
+app.get('/showreceipes', (req, res)=>{
+    console.log('Yes');
     res.json(receipes);
+})
+
+app.get('/receipedetails/:id', (req, res)=>{
+    console.log(req.params.id);
 })
 
 const server = app.listen(2700,()=>{

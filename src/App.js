@@ -4,6 +4,7 @@ import './App.css';
 import AddReceipe from './Components/AddReceipe';
 import Navbar from './Components/Navbar';
 import ShowReceipes from './Components/ShowReceipes';
+import ReceipeDetails from './Components/ReceipeDetails';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
         <Routes>
           <Route path='addreceipe' element={<AddReceipe/>}/>
           <Route path='showreceipes' element={<ShowReceipes/>}/>
+          <Route path='receipedetails'>
+            <Route path=':id' element={<ReceipeDetails/>}/>
+          </Route>
         </Routes>
       
       </BrowserRouter>
