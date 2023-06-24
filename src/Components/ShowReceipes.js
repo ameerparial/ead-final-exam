@@ -15,6 +15,7 @@ function ShowReceipes() {
 
   return (
     <div>
+        <h1>List of available receipes</h1>
         {
             receipes.map((receipe, index)=>(
                 <li key={index}><Link to={`/receipedetails/${receipe._id}`}>{receipe.title}</Link></li>

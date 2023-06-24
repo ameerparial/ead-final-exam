@@ -29,6 +29,18 @@ app.get('/receipedetails/:id', async (req, res)=>{
     res.json(receipe);
 })
 
+app.get('/receipedelete/:id', async (req, res)=>{
+    console.log('Delete Product');
+    const id = req.params.id;
+    console.log('Sucessfully deleted');
+    await ReceipeSchema.deleteOne({_id:id});
+    res.redirect('http://localhost:3000/showreceipes');
+
+})
+app.get('/receipeupdate/:id', (req, res)=>{
+    res.json(req.params.id);
+})
+
 const server = app.listen(2700,()=>{
     Connection();
     console.log('Server is listening at the port '+server.address().port);

@@ -19,6 +19,10 @@ function App() {
           <Route path='receipedetails'>
             <Route path=':id' element={<ReceipeDetails/>}/>
           </Route>
+          {/* <Route path='receipedelete'>
+            <Route path=':id' element={}/>
+          </Route> */}
+
         </Routes>
       
       </BrowserRouter>
