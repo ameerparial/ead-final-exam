@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
 
 function ReceipeDetails() {
+  const params = useParams();
+  console.log(params);
     const [receipe, setReceipe] = useState({});
 
     useEffect(()=>{
-        fetch('http://localhost:2700/receipedetails')
+        fetch(`http://localhost:2700/receipedetails/${params.id}`)
         .then(res=>res.json())
         .then(data=>setReceipe(data))
         .catch(err=>console.log(err))

@@ -6,7 +6,6 @@ const cors = require('cors');
 const Connection = require('./Controllers/Connection');
 const ReceipeSchema = require('./Models/Receipe');
 
-const receipes =[];
 
 app.use(express.urlencoded({extended:true}));
 app.use(cors());
@@ -24,8 +23,10 @@ app.get('/showreceipes', async (req, res)=>{
     res.json(receipe);
 })
 
-app.get('/receipedetails/:id', (req, res)=>{
+app.get('/receipedetails/:id', async (req, res)=>{
     console.log(req.params.id);
+    const receipe = await ReceipeSchema.findById(req.params.id);
+    res.json(receipe);
 })
 
 const server = app.listen(2700,()=>{

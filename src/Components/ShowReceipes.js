@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 function ShowReceipes() {
     const [receipes, setReceipes] = useState([]);
@@ -16,7 +17,7 @@ function ShowReceipes() {
     <div>
         {
             receipes.map((receipe, index)=>(
-                <li key={index}>{receipe.title}</li>
+                <li key={index}><Link to={`/receipedetails/${receipe._id}`}>{receipe.title}</Link></li>
             ))
         }
 
@@ -25,3 +26,5 @@ function ShowReceipes() {
 }
 
 export default ShowReceipes
+
+// <li key={index}><Link to={`/receipedetails/${receipe._id}`}>{receipe.title}</Link></li>
